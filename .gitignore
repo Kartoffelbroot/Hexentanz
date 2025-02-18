@@ -1,3 +1,5 @@
+# more info under https://git-scm.com/docs/gitignore
+
 # Prerequisites
 *.d
 
@@ -31,4 +33,6 @@
 *.out
 *.app
 
-./Logs
+#exclude Folder
+Logs/
+Temp/
