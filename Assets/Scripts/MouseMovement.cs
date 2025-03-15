@@ -30,7 +30,7 @@ public class MouseMovement : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         
         // Rotation around the x axis (Look up and down)
-        xRotation += mouseY;
+        xRotation -= mouseY;
 
         // Clamp the rotation
         xRotation = Mathf.Clamp(xRotation, topClamp, bottomClamp);
