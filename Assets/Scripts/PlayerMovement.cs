@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public int sprint;
 
     Vector3 velocity;
 
@@ -44,8 +45,26 @@ public class PlayerMovement : MonoBehaviour
         // Creating the moving vector
         Vector3 move = transform.right * x + transform.forward * z;
 
+
+        // add sprint 
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+        // Actually moving
+        controller.Move(speed * Time.deltaTime * move * sprint);
+        }
+        else
+        {
         // Actually moving
         controller.Move(speed * Time.deltaTime * move);
+        }
+
+
+        // Check if Jump
+        if(Input.GetButtonDown("Jump") && isGrounded)
+        {
+            // jump
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
 
         // Check if Jump
         if(Input.GetButtonDown("Jump") && isGrounded)
