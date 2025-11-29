@@ -1,16 +1,16 @@
+
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OllisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(collision.gameObject.CompareTag("Target"))
+        {
+            print("hit" + collision.gameObject.name + " !");
+            Destroy(gameObject);
+        }
     }
 }

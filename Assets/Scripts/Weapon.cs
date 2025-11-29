@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
-    public float bulletVelocity = 30;
+    public float bulletVelocity = 80;
     public float bulletPrefabLifeTime = 3f;
 
 
